@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <app-dashboard></app-dashboard>
   </div>
 </template>
+<script>
+import AppDashboard from '@/components/AppDashboard'
+export default {
+  components: { AppDashboard },
+}
+</script>
 
 <style lang="scss">
 @import "./static/scss/main";
