@@ -1,23 +1,52 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../pages/Home.vue'
+//import Home from '../pages/Home.vue'
+import ComponentsView from '@/pages/ComponentsView.vue'
+import AppAccordionDemo from '@/components/ui/accordion/demo/AppAccordionDemo.vue'
+import AppButtonDemo from '@/components/ui/button/demo/AppButtonDemo.vue'
+import AppInputFieldDemo from '@/components/ui/input-field/demo/AppInputFieldDemo.vue'
+import AppSelectFieldDemo from '@/components/ui/select-field/demo/AppSelectFieldDemo.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../pages/About.vue')
-  }
+export const routes = [
+    {
+      name: 'ui',
+      path: '/ui',
+      component: ComponentsView,
+      children: [
+        {
+          name: 'AppAccordionDemo',
+          path: '/accordion-demo',
+          component: AppAccordionDemo
+        },
+        {
+          name: 'AppButtonDemo',
+          path: '/button-demo',
+          component: AppButtonDemo
+        },
+        {
+          name: 'AppInputFieldDemo',
+          path: '/input-field-demo',
+          component: AppInputFieldDemo
+        },
+        {
+          name: 'AppSelectFieldDemo',
+          path: '/select-field-demo',
+          component: AppSelectFieldDemo
+        },
+      ]
+    },
+    {
+      name: 'common',
+      path: '/common',
+      component: ComponentsView,
+    },
+    {
+      name: 'layout',
+      path: '/layout',
+      component: ComponentsView,
+    }
 ]
 
 const router = new VueRouter({
