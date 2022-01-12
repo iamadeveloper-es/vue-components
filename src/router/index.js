@@ -6,6 +6,7 @@ import AppAccordionDemo from '@/components/ui/accordion/demo/AppAccordionDemo.vu
 import AppButtonDemo from '@/components/ui/button/demo/AppButtonDemo.vue'
 import AppInputFieldDemo from '@/components/ui/input-field/demo/AppInputFieldDemo.vue'
 import AppSelectFieldDemo from '@/components/ui/select-field/demo/AppSelectFieldDemo.vue'
+import AppTableDemo from '@/components/ui/table/demo/AppTableDemo.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ export const routes = [
           name: 'AppSelectFieldDemo',
           path: '/select-field-demo',
           component: AppSelectFieldDemo
+        },
+        {
+          name: 'AppTableDemo',
+          path: '/table-demo',
+          component: AppTableDemo
         },
       ]
     },
