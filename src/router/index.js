@@ -17,27 +17,27 @@ export const routes = [
       component: ComponentsView,
       children: [
         {
-          name: 'AppAccordionDemo',
+          name: 'AppAccordion',
           path: '/accordion-demo',
           component: AppAccordionDemo
         },
         {
-          name: 'AppButtonDemo',
+          name: 'AppButton',
           path: '/button-demo',
           component: AppButtonDemo
         },
         {
-          name: 'AppInputFieldDemo',
+          name: 'AppInputField',
           path: '/input-field-demo',
           component: AppInputFieldDemo
         },
         {
-          name: 'AppSelectFieldDemo',
+          name: 'AppSelectField',
           path: '/select-field-demo',
           component: AppSelectFieldDemo
         },
         {
-          name: 'AppTableDemo',
+          name: 'AppTable',
           path: '/table-demo',
           component: AppTableDemo
         },

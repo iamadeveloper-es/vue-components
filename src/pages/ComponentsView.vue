@@ -14,8 +14,7 @@ export default {
     computed:{
         setComponentName(){
             const routeName = this.$route.name
-            const componentName = routeName.substring(0, routeName.length - 4);
-            return componentName
+            return routeName
         }
     }
 }
