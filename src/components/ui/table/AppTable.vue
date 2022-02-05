@@ -1,7 +1,7 @@
 <template>
-    <div class="app-table-responsive">
+    <div class="app-table table-responsive">
         <table 
-        class="app-table"
+        class="app-table-content"
         table-layout="auto"
         >
             <caption
@@ -44,12 +44,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-table-responsive{
+.app-table{
     display: block;
     width: 100%;
-    overflow-x: auto;
+    &.table-responsive{
+        overflow-x: auto;
+    }
 }
-.app-table{
+.app-table-content{
     width: 100%;
     max-width: 100%;
     caption{
