@@ -39,6 +39,7 @@ export default {
     color: white;
     display: inline-block;
     padding: 14px 10px;
+    margin: 5px;
     border-radius: 3px;
     border: none;
     line-height: 1.4;
