@@ -8,6 +8,7 @@ import AppInputFieldDemo from '@/components/ui/input-field/demo/AppInputFieldDem
 import AppSelectFieldDemo from '@/components/ui/select-field/demo/AppSelectFieldDemo.vue'
 import AppTableDemo from '@/components/ui/table/demo/AppTableDemo.vue'
 import AppModalDemo from '@/components/ui/modal/demo/AppModalDemo.vue'
+import AppAlertDemo from '@/components/ui/alert/demo/AppAlertDemo.vue'
 
 Vue.use(VueRouter)
 
@@ -46,6 +47,11 @@ export const routes = [
           name: 'AppModal',
           path: '/modal-demo',
           component: AppModalDemo
+        },
+        {
+          name: 'AppAlert',
+          path: '/alert-demo',
+          component: AppAlertDemo
         }
       ]
     },
