@@ -3,51 +3,52 @@
   class="app-input-wrapper floating-label"
   :class="(isfloatingLabel && floatingLabel) || value ? 'is-focused' : ''"
   >
-    <select
-    class="app-input app-select-field"
-    :id="inputRef"
-    :name="inputRef"
-    :aria-label="label"
-    :required="required"
-    v-model="computed_value"
+    <select 
+    class="app-input app-input-field"
+    :id="id"
+    aria-label="Floating label select"
     @input="$emit('input', $event.target.value)"
     @focus="floatingActive()"
     @blur="floatingRemove()"
+    @change="handleChange($event)"
     >
-      <option disabled="true" selected="selected">{{ shortLabel }}</option>
       <option
-        v-for="(option, index) in options"
-        :key="index"
-        :value="getValue(option)"
-      >
-        {{ getLabel(option) }}
-      </option>
+      class="option"
+      v-for="(option, index) in options"
+      :key="index"
+      :value="option.value"
+      :disabled="option.value === null ? true : false"
+      :hidden="option.value === null ? true : false"
+      :selected="option.selected || option.value === null">{{ option.label }}</option>
     </select>
-    <label :for="inputRef">{{ label }}</label>
+    <label 
+    :for="id">{{ selectLabel }}</label>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'app-select-field',
   props: {
-    inputRef: {
-      type: String,
-      default: "",
-    },
-    label: {
-      type: String,
-      default: "",
-    },
-    shortLabel: {
-      type: String,
-      default: "selecciona una opción",
-    },
     options: {
       type: Array,
-      required: true,
+      required: true
     },
     value: {
-      default: "",
+      default: ''
+    },
+    selectLabel: {
+      type: String,
+      default: 'Selecciona una opción'
+    },
+    id: {
+      type: String,
+      required: false,
+      default: 'app-select'
+    },
+    selectClass: {
+      type: Array,
+      required: false,
     },
     required: {
       type: Boolean,
@@ -64,17 +65,6 @@ export default {
       isLabel: false,
     }
   },
-  computed: {
-    computed_value: {
-      get: function () {
-        return this.value;
-      },
-      set: function (newValue) {
-        this.$emit("input", newValue);
-      },
-    },
-  },
-
   methods: {
     floatingActive(){
       this.isfloatingLabel = true
@@ -82,21 +72,10 @@ export default {
     floatingRemove(){
       this.isfloatingLabel = false
     },
-    getValue(obj) {
-      if ("value" in obj) {
-        return obj.value;
-      } else {
-        return obj[Object.keys(obj)[0]];
-      }
-    },
-    getLabel(obj) {
-      if ("label" in obj) {
-        return obj.label;
-      } else {
-        return obj[Object.keys(obj)[1]];
-      }
-    },
-  },
+    handleChange(ev){
+      this.$emit('Change', ev)
+    }
+  }
 };
 </script>
 

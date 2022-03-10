@@ -1,8 +1,6 @@
 <template>
   <div class="app-select-field-demo">
     <app-select-field
-    :label="'Selecciona una opción'"
-    :shortLabel="'Selecciona una opción'"
     :floatingLabel="true"
     :options="options"
     v-model="selectValue"
@@ -21,18 +19,11 @@ export default {
     data(){
         return{
             options: [
-                {
-                    id: 1,
-                    label: 'España'
-                },
-                {
-                    id: 2,
-                    label: 'Francia'
-                },
-                {
-                    id: 3,
-                    label: 'Italia'
-                }
+                { label: 'Defaault', value: null },
+                { label: 'España', value: 'espania' },
+                // { label: 'Francia', value: 'francia', selected: true },
+                { label: 'Rumanía', value: 'rumanía' },
+                { label: 'Andorra', value: 'andorra' }
             ],
             selectValue: ''
         }
