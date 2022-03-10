@@ -7,6 +7,7 @@ import AppButtonDemo from '@/components/ui/button/demo/AppButtonDemo.vue'
 import AppInputFieldDemo from '@/components/ui/input-field/demo/AppInputFieldDemo.vue'
 import AppSelectFieldDemo from '@/components/ui/select-field/demo/AppSelectFieldDemo.vue'
 import AppTableDemo from '@/components/ui/table/demo/AppTableDemo.vue'
+import AppTabDemo from '@/components/ui/tab/demo/AppTabDemo.vue'
 import AppModalDemo from '@/components/ui/modal/demo/AppModalDemo.vue'
 import AppAlertDemo from '@/components/ui/alert/demo/AppAlertDemo.vue'
 
@@ -52,6 +53,11 @@ export const routes = [
           name: 'AppAlert',
           path: '/alert-demo',
           component: AppAlertDemo
+        },
+        {
+          name: 'AppTab',
+          path: '/tabt-demo',
+          component: AppTabDemo
         }
       ]
     },
