@@ -57,7 +57,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import AppButton from '../../button/AppButton.vue'
 import AppModal from '../AppModal.vue'
 export default {
@@ -88,11 +87,6 @@ export default {
             this.isconditions = true
             this.modalv2.hide()
         },
-    },
-    computed:{
-        ...mapGetters([
-            'getModalShow'
-        ])
     }
 }
 </script>
