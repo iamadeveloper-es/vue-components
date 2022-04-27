@@ -1,3 +1,4 @@
+const { VueLoaderPlugin } = require('vue-loader')
 module.exports = {
     css: {
       loaderOptions: {
@@ -7,6 +8,5 @@ module.exports = {
             `,
         },
       },
-    },
+    }
   };
-  
